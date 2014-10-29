@@ -11,11 +11,12 @@
 
 -define(TIMEOUT, 5000).
 
--ifdef(pre17).
+
+%%-ifdef(pre17).
 -type pid_queue() :: queue().
--else.
--type pid_queue() :: queue:queue().
--endif.
+%%-else.
+%%-type pid_queue() :: queue:queue().
+%%-endif.
 
 -type pool() ::
     Name :: (atom() | pid()) |
